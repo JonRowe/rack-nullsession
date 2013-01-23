@@ -16,7 +16,7 @@ module Rack
     end
 
     def call env
-      @app.call ({ "rack.session" => DumbHash.new }).merge env
+      @app.call( ({ "rack.session" => DumbHash.new }).merge(env) )
     end
 
   end
