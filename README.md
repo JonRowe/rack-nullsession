@@ -1,3 +1,4 @@
+[![Build Status](https://secure.travis-ci.org/JonRowe/rack-nullsession.png)](http://travis-ci.org/JonRowe/rack-nullsession)
 # Rack::Nullsession
 
 What's that? You're writing an API but some pesky Rack Middleware wants
