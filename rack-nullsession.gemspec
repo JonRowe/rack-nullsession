@@ -1,19 +1,19 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rack-nullsession/version'
+require 'rack/null_session/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "rack-nullsession"
-  gem.version       = Rack::Nullsession::VERSION
+  gem.version       = Rack::NullSession::VERSION
   gem.authors       = ["Jon Rowe"]
   gem.email         = ["hello@jonrowe.co.uk"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{A Rack Middleware that fakes a session}
+  gem.summary       = %q{A Rack Middleware that fakes a session}
+  gem.homepage      = "https://github.com/JonRowe/rack-nullsession"
 
   gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.executables   = []
+  gem.test_files    = gem.files.grep(%r{^(spec)/})
   gem.require_paths = ["lib"]
 end
