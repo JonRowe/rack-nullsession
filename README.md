@@ -1,6 +1,8 @@
 # Rack::Nullsession
 
-TODO: Write a gem description
+What's that? You're writing an API but some pesky Rack Middleware wants
+a session? (Looking at you Warden...) Very well... NullSession to the
+rescue!
 
 ## Installation
 
@@ -18,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Mosey on over to your Rack configuration and...
+
+`require 'rack-nullsession'`
+
+or
+
+`require 'rack/null_session'`
+
+The choice... is yours! Then in your framework, app or rackup file....
+
+`use Rack::NullSession`
+
+Enjoy!
 
 ## Contributing
 
