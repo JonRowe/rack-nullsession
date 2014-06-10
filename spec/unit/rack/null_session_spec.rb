@@ -8,18 +8,18 @@ describe 'inserting a null rack session into the middleware stack' do
 
   let(:middleware) { Rack::NullSession.new app }
 
-  subject { middleware.call env }
+  subject(:call_app) { middleware.call env }
 
   it "calls the application with rack.session value of Hash" do
-    app.should_receive(:call).with hash_including("rack.session" => {})
-    subject
+    expect(app).to receive(:call).with hash_including("rack.session" => {})
+    call_app
   end
   it "calls the application preserving the original env" do
-    app.should_receive(:call).with hash_including(env)
-    subject
+    expect(app).to receive(:call).with hash_including(env)
+    call_app
   end
   it "preserves the application response" do
-    subject.should == result
+    expect(call_app).to eq(result)
   end
 
   context "but rack.session already exists" do
@@ -28,9 +28,8 @@ describe 'inserting a null rack session into the middleware stack' do
     before { env["rack.session"] = existing_session }
 
     it 'leaves the existing session alone' do
-      app.should_receive(:call).with hash_including("rack.session" => existing_session)
-      subject
+      expect(app).to receive(:call).with hash_including("rack.session" => existing_session)
+      call_app
     end
   end
-
 end
