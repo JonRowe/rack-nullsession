@@ -24,5 +24,6 @@ Gem::Specification.new do |gem|
   else
     gem.add_development_dependency "rake", '~> 12.3.3'
   end
-  gem.add_development_dependency "rspec", "~> 3.0.0"
+
+  gem.add_development_dependency "rspec", "~> 3.9.0"
 end
